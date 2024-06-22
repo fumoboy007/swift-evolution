@@ -16,9 +16,11 @@ It is tricky to measure adoption accurately without access to the download stati
 
 How do we measure adoption for server-side programming? A rough metric could be the popularity of foundational open-source packages for each programming language. For example, we could look at the popularity of a web services framework like [Vapor](https://github.com/vapor/vapor/) compared to similar packages in other languages. We should choose a package that is unlikely to have overlap with the Apple community—the community we want to exclude from the metric.
 
-Vapor has generally been used to build smaller server-side applications or the frontend of larger server-side applications. [By contrast](https://aws.amazon.com/compare/the-difference-between-grpc-and-rest/), the [gRPC](https://grpc.io) framework has generally been used to build the distributed backend of larger server-side applications. Due to this, it is less likely for gRPC users to have overlap with the Apple community compared to Vapor users, so let us use the popularity of the language-specific gRPC repositories as the metric.
+Vapor has generally been used to build smaller server-side applications or the frontend of larger server-side applications. [By contrast](https://aws.amazon.com/compare/the-difference-between-grpc-and-rest/), the [gRPC](https://grpc.io) framework has generally been used to build the distributed backend of larger server-side applications. Due to the backend being farther away from the client-side application, it is less likely for gRPC users to have overlap with the Apple community compared to Vapor users, so let us use the popularity of gRPC as the metric.
 
-The graph in the following section shows the GitHub star history for the gRPC repository of each programming language. The chosen programming languages are the memory-safe languages [jointly recommended](https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3608324/us-and-international-partners-issue-recommendations-to-secure-software-products/) by several governments around the world. (Python was excluded because it does not have a language-specific gRPC repository.)
+The graph in the following section shows the GitHub star history for the gRPC repository of each programming language. The chosen programming languages are the memory-safe languages [jointly recommended](https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3608324/us-and-international-partners-issue-recommendations-to-secure-software-products/) by several governments around the world. Please note the following:
+- [`hyperium/tonic`](https://github.com/hyperium/tonic) is the gRPC repository for the Rust programming language.
+- Python was excluded because it [does not have](https://github.com/grpc/grpc/tree/56b3686229e1c941ed5f9ef85a98ba0b52f3a953/src/python/grpcio) a language-specific gRPC repository.
 
 ### Interpretation of Adoption Data
 
@@ -28,7 +30,7 @@ The metric is only a rough proxy, so we should only interpret the data at a high
 
 Given that Swift is a fast, modern, and safe programming language that has already proven itself among the Apple community, what are the possible reasons for Swift’s relatively flat trajectory outside of the Apple community?
 
-Certainly, there are more bugs and missing features when using Swift on non-Apple platforms. However, even after foundational improvements like the [concurrency system](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/), which was released in 2021, the trajectory of Swift adoption for server-side programming remained almost completely the same. This suggests that there are likely other reasons for Swift’s persistently flat trajectory.
+Certainly, there are more bugs and missing features when using Swift outside of the Apple ecosystem. However, even after foundational improvements like the [concurrency system](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/), which was released in 2021, the trajectory of Swift adoption for server-side programming remained almost completely the same. This suggests that there are likely other reasons for Swift’s persistently flat trajectory.
 
 This document details several plausible issues that are holding back Swift adoption outside of the Apple community as well possible changes to address those issues.
 
@@ -42,7 +44,7 @@ Similar to other vision documents, this document proposes changes at a high leve
 
 ### Avoid Branding Swift as an Apple Product
 
-A large portion of developers outside the Apple community are not enthusiastic about the Apple brand and could have negative bias against Swift due to the strong association with Apple. Therefore, we should avoid branding Swift as an Apple product.
+A large portion of developers outside the Apple community have an aversion to the Apple brand and could have negative bias against Swift due to the strong association with Apple. Therefore, we should avoid branding Swift as an Apple product.
 
 #### Possible Changes
 
@@ -59,15 +61,15 @@ Similar to the previous section but thinking from a more technical perspective, 
 #### Possible Changes
 
 - Changes to the language or to foundational packages like `swift-foundation` are not considered complete until they are implemented for all supported platforms.
-  - This may already be the motivation for the `swift-foundation` rewrite. However, we should ensure this policy is explicit and enforced.
+  - The `swift-foundation` [rewrite](https://www.swift.org/blog/future-of-foundation/) may have already been motivated by a similar thought. However, we should ensure this policy is explicit and enforced.
 - Actively encourage feature parity between Xcode and developer tools used by those outside of the Apple community including IDEs, build systems, profilers, etc.
   - One way to do so could be to enforce a policy that requires any new Swift-related features in Xcode to be built on top of generic open-source Swift packages that non-Xcode developer tools can depend on.
-- Avoid mentioning Apple platforms first on the Swift website or in documentation.
+- Avoid mentioning Apple platforms first on the Swift website, in documentation, or in discussions.
   - Developers interested in Apple platforms would have already found the Apple website, which has all the relevant information, so there is no need for the Swift website to emphasize Apple platforms.
 
 ### No Secrets
 
-A major Big Tech company recently considered replacing C++ with Swift as the default programming language for their huge codebase. A major reason they rejected Swift was the perception that Apple might force disruptive changes without thoroughly and seriously considering community feedback.
+A major “Big Tech” company recently considered replacing C++ with Swift as the default programming language for their huge codebase. The main reason they rejected Swift was the perception that Apple might force disruptive changes without thoroughly and seriously considering community feedback.
 
 #### Possible Changes
 
@@ -86,6 +88,6 @@ Even with the above changes, it takes time to change perceptions. Evangelism can
 
 ## Appreciation for Apple
 
-Apple funds most of the development of Swift, so we should consider the return on their investment. The proposed changes would lessen Apple’s control over Swift but the benefits to Apple could be drastic.
+Apple funds most of the development of Swift, so we should consider the return on their investment. The proposed changes would lessen Apple’s control over Swift but the benefits to Apple could be significant.
 
 A large portion of software that Apple depends on is written by developers outside of the Apple community: [low-level OS software](https://github.com/apple-oss-distributions) and server-side software. Imagine the benefits to security, reliability, and efficiency as that software is migrated to Swift.
