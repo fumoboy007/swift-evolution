@@ -74,7 +74,9 @@ A major “Big Tech” company recently considered replacing C++ with Swift as t
 #### Possible Changes
 
 - Disallow Apple from announcing platform features that rely on unreviewed language changes.
-  - For example, SwiftUI was announced [before](https://forums.swift.org/t/important-evolution-discussion-of-the-new-dsl-feature-behind-swiftui/25168) the result builders feature that it relied on was even proposed. This heavily biased the review process: even if some changes could be made based on community feedback, the proposal effectively could not be rejected.
+  - For example, SwiftUI was announced [before](https://forums.swift.org/t/important-evolution-discussion-of-the-new-dsl-feature-behind-swiftui/25168) the result builders feature that it relied on was even proposed. This heavily biased the review process: even if some changes could be made based on community feedback, the proposal as a whole effectively could not be rejected.
+- Document the Core Team’s internal discussions.
+  - All other [community groups](https://www.swift.org/community/#community-structure) discuss topics amongst themselves in the open on the [Swift Forums](https://forums.swift.org).
 
 ### Evangelism
 
