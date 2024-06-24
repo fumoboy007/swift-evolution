@@ -93,3 +93,5 @@ Even with the above changes, it takes time to change perceptions. Evangelism can
 Apple funds most of the development of Swift, so we should consider the return on their investment. The proposed changes would lessen Apple’s control over Swift but the benefits to Apple could be significant.
 
 A large portion of software that Apple depends on is written by developers outside of the Apple community: [low-level OS software](https://github.com/apple-oss-distributions) and server-side software. Imagine the benefits to security, reliability, and efficiency as that software is migrated to Swift.
+
+Put simply, as Swift gains wider adoption, the *whole world* will be better off—including Apple.
