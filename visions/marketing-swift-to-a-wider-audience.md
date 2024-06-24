@@ -32,7 +32,7 @@ Given that Swift is a fast, modern, and safe programming language that has alrea
 
 Certainly, there are more bugs and missing features when using Swift outside of the Apple ecosystem. However, even after foundational improvements like the [concurrency system](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/), which was released in 2021, the trajectory of Swift adoption for server-side programming remained almost completely the same. This suggests that there are likely other reasons for Swift’s persistently flat trajectory.
 
-This document details several plausible issues that are holding back Swift adoption outside of the Apple community as well possible changes to address those issues.
+This document details several plausible issues that are holding back Swift adoption outside of the Apple community as well as possible changes to address those issues.
 
 ## Scope of Document
 
