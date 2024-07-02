@@ -12,7 +12,7 @@ Although we have [high ambitions](https://github.com/swiftlang/swift-evolution/a
 
 ### Measuring Adoption
 
-It is tricky to measure adoption accurately without access to the download statistics of each programming language. As a proxy, let us look at adoption of Swift for server-side programming since that is currently the most popular area where Swift is used outside of the Apple community.
+It is tricky to measure adoption accurately without access to the detailed download statistics of each programming language. As a proxy, let us look at adoption of Swift for server-side programming since that is currently the most popular area where Swift is used outside of the Apple community.
 
 How do we measure adoption for server-side programming? A rough metric could be the popularity of foundational open-source packages for each programming language. For example, we could look at the popularity of a web services framework like [Vapor](https://github.com/vapor/vapor/) compared to similar packages in other languages. We should choose a package that is unlikely to have overlap with the Apple community—the community we want to exclude from the metric.
 
